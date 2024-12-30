@@ -72,11 +72,11 @@ pub fn build(b: *std.Build) void {
     build_web.dependOn(&install_html.step);
     build_web.dependOn(&web.step);
 
-    const bin = b.addExecutable(.{ .name = "catchfire", .root_source_file = b.path("src/main.zig"), .target = b.standardTargetOptions(.{}), .optimize = .ReleaseFast });
+    const bin = b.addExecutable(.{ .name = "stardust", .root_source_file = b.path("src/main.zig"), .target = b.standardTargetOptions(.{}), .optimize = .ReleaseFast });
     bin.linkSystemLibrary("GL");
     bin.linkSystemLibrary("SDL2");
     bin.linkLibC();
 
-    b.step("native", "desktop engine build").dependOn(&b.addInstallArtifact(bin, .{}).step);
-    b.step("run:native", "run the desktop editor").dependOn(&b.addRunArtifact(bin).step);
+    b.step("stardust", "desktop engine build").dependOn(&b.addInstallArtifact(bin, .{}).step);
+    b.step("run:stardust", "run the desktop editor").dependOn(&b.addRunArtifact(bin).step);
 }
