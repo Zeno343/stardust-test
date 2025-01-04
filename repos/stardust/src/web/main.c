@@ -4,10 +4,12 @@
 #include <emscripten.h>
 #include <emscripten/stack.h>
 
+/*
 #define GL_GLEXT_PROTOTYPES
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_opengl.h"
-#include "SDL2/SDL_opengl_glext.h"
+#include "SDL.h"
+#include "SDL_opengl.h"
+#include "SDL_opengl_glext.h"
+*/
 
 extern int em_init();
 extern bool em_run();
